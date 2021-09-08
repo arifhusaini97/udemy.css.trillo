@@ -11,7 +11,7 @@
   font-size: 1.4rem;
   height: 7rem;
   background-color: #ffff;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   display: flex;
   // for  x-axis alignment
   justify-content: space-between;
@@ -28,7 +28,7 @@
   // flex width
   flex: 0 0 20%;
 
-  display:flex;
+  display: flex;
   // By default, it will be row
   flex-direction: column;
   justify-content: space-between;
@@ -38,7 +38,28 @@
   background-color: #ffff;
 
   // Test
-//   background-color: orangered;
-  height: 80rem;
+  //   background-color: orangered;
+  // height: 80rem;
+  flex: 1;
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+}
+
+.description {
+  font-size: 1.4rem;
+  background-color: #ffff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+}
+
+.user-reviews {
+  background-color: yellowgreen;
   flex: 1;
 }

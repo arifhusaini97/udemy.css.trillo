@@ -206,7 +206,7 @@
 // OVERVIEW
 .overview {
   display: flex;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
   // align the item to the center of main axis
   align-items: center;
 
@@ -240,7 +240,7 @@
     background-color: var(--color-primary);
     color: #fff;
     margin-left: 3rem;
-    padding:0 2.25rem;
+    padding: 0 2.25rem;
     align-self: stretch;
     display: flex;
     flex-direction: column;
@@ -291,5 +291,74 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+// PARAGRAPH
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+////////////////////////////////////////////////////////////////
+// LIST
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+  }
+
+  &__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+
+    // Older browsers
+    // background-image: url(../img/SVG/chevron-small-right.svg);
+    // background-size: cover;
+
+    // Newer browsers - masks
+    // Mask used to go through the image and see what is it
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/SVG/chevron-small-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/SVG/chevron-small-right.svg);
+    mask-size: cover;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+// RECOMMEND
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+  &__count{
+    margin-right: auto;
+
+  }
+  &__friends{
+
+  }
+  &__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    &:not(:last-child){
+      margin-right:-1rem;
+    }
   }
 }
