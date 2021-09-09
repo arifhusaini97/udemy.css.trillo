@@ -270,14 +270,14 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s;
-  & span{
-    margin-left:3px;
+  & span {
+    margin-left: 3px;
     transition: margin-left 0.2s;
   }
   &:hover {
     color: var(--color-grey-dark-1);
-    & span{
-      margin-left:8px;
+    & span {
+      margin-left: 8px;
     }
   }
   &:focus {
@@ -381,8 +381,8 @@
   &__text {
     margin-bottom: 2rem;
     // z-index only work when we set the position;
-    z-index:10;
-    position:relative;
+    z-index: 10;
+    position: relative;
   }
   &__user {
     display: flex;
@@ -422,6 +422,76 @@
     font-size: 20rem;
     color: var(--color-grey-light-2);
     font-family: sans-serif;
-    z-index:1;
+    z-index: 1;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+// CALL TO ACTION
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+// CALL TO ACTION
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  cursor: pointer;
+  
+  transition: all 0.2s;
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover{
+    background-image: linear-gradient(
+    to left,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:hover &__invisible {
+    // we can use this because the position is absolute
+    top: 0;
+  }
+  &:focus{
+    outline:none;
+    animation: pulsate 1s infinite;
   }
 }
